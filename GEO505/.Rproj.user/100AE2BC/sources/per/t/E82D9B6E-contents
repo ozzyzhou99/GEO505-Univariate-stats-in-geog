@@ -1,0 +1,63 @@
+---
+title: "Lab 1: Kick Off"
+author: "Put your name here"
+date: "Put the date"
+output: html_document
+---
+
+## Question 1: Dataset (34 points)
+
+Generate the **SAME** dataset that you saw in the lab instruction (i.e., 1,000 samples with an average of 300 and a standard deviation of 50), and print the first few observations using the `head()` function. 
+
+```{r Q1}
+# for reproducibility
+set.seed(723)
+# generate samples with rnorm function and
+# store the samples in a variable called: sampled_data
+sampled_data <- rnorm(n = 1000, mean = 300, sd = 50) |> round(digits = 2)
+# look the first 6 sampled data
+head(sampled_data)
+```
+
+## Question 2: Descriptive statistics (33 points) 
+
+Print the `mean, median, minimum, maximum, variance, and standard deviation` of the generated dataset in Question 1. 
+
+```{r Q2}
+mean(sampled_data)
+median(sampled_data)
+min(sampled_data)
+max(sampled_data)
+var(sampled_data)
+sd(sampled_data)
+```
+
+## Question 3: Data visualization (33 points)
+
+### Q3a: What type of data do you have?
+
+```{r Q3a}
+# Our data is 'Quantitative continuous'.
+```
+
+### Q3b: Display a histogram for your data
+
+```{r Q3b}
+# draw histgram
+hist(sampled_data, 
+     main = "Histogram of Sampled Data", 
+     xlab = "Values", 
+     ylab = "Frequency", 
+     col = "gray", 
+     border = "black")
+```
+
+### Q3c: Display a boxplot for your data
+
+```{r Q3c}
+#draw boxplot
+boxplot(sampled_data, 
+        main = "Boxplot of Sampled Data", 
+        ylab = "Values", 
+        col = "gray")
+```
